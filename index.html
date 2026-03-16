@@ -5,72 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chindala Pavan - Senior Ruby on Rails Engineer</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        main {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        
         header {
             text-align: center;
-            margin-bottom: 30px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            animation: slideDown 0.6s ease-out;
         }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
+            color: #1a252f;
+            margin-bottom: 12px;
+            font-size: 3em;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+        
         h2 {
             color: #34495e;
-            font-size: 1.2em;
-            margin-bottom: 5px;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
+        
+        header p {
+            font-size: 1.15em;
+            color: #7f8c8d;
+            margin-top: 15px;
+            letter-spacing: 0.3px;
+        }
+        
         h3 {
-            color: #2980b9;
-            border-bottom: 2px solid #2980b9;
-            padding-bottom: 5px;
-            margin-top: 40px;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-top: 45px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            font-size: 1.4em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
+        
         h4 {
             color: #27ae60;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.25em;
+            font-weight: 700;
+            border-left: 5px solid #27ae60;
+            padding-left: 15px;
+            position: relative;
         }
+        
         section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.94) 100%);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
         ul, ol {
-            padding-left: 20px;
+            padding-left: 25px;
         }
+        
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 8px 0;
+            transition: all 0.2s ease;
         }
+        
+        li:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+        
         strong {
             color: #e74c3c;
+            font-weight: 700;
         }
+        
         article {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #ecf0f1;
+            transition: all 0.3s ease;
         }
+        
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        article:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        
         p {
-            margin: 5px 0;
+            margin: 8px 0;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95em;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.1em;
+            }
+            
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Chindala Pavan</h1>
-        <h2>Senior Ruby on Rails Engineer – DDD | Scalable APIs | High-Compliance Platforms</h2>
-        <p>dpavan8121@gmail.com | +1 3146438716</p>
-    </header>
+    <main>
+        <header>
+            <h1>Chindala Pavan</h1>
+            <h2>Senior Ruby on Rails Engineer – DDD | Scalable APIs | High-Compliance Platforms</h2>
+            <p>📧 dpavan8121@gmail.com | 📱 +1 3146438716</p>
+        </header>
 
     <section id="professional-summary">
         <h3>PROFESSIONAL SUMMARY</h3>
@@ -182,5 +311,10 @@
             <p><strong>Environment:</strong> Ruby 2.2-2.3, Rails 4.2/5.0, MySQL, REST APIs, Redis, ERB, jQuery, JavaScript (ES5), Webpacker, HTML/CSS, Bootstrap, Devise, Git, Simple Form, Heroku, RSpec, Capybara, Postman, Swagger, Prometheus, Grafana, Agile/Jira.</p>
         </article>
     </section>
+    </main>
+    
+    <footer>
+        <p>© 2026 Chindala Pavan. Designed with care. All rights reserved.</p>
+    </footer>
 </body>
 </html>
