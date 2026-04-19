@@ -3,287 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chindala Pavan - Senior Ruby on Rails Programmer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.5);
-            animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleUp {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        h1 {
-            font-size: 3.5em;
-            font-weight: 800;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-        }
-        
-        h2 {
-            color: #34495e;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-        
-        header p {
-            font-size: 1em;
-            color: #7f8c8d;
-            margin-top: 20px;
-        }
-        
-        h3 {
-            color: #fff;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 15px 25px;
-            border-radius: 12px;
-            margin: 50px 0 25px 0;
-            font-size: 1.3em;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            animation: slideLeft 0.6s ease-out;
-        }
-        
-        section {
-            background: rgba(255, 255, 255, 0.97);
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 18px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: scaleUp 0.6s ease-out;
-        }
-        
-        section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-        
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .skill-tag {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 12px 18px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            font-weight: 600;
-            color: #2c3e50;
-            transition: all 0.3s ease;
-            animation: slideRight 0.5s ease-out;
-        }
-        
-        .skill-tag:hover {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            transform: translateX(5px);
-        }
-        
-        article {
-            margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #ecf0f1;
-            animation: slideLeft 0.6s ease-out;
-        }
-        
-        article:last-child {
-            border-bottom: none;
-        }
-        
-        article:hover {
-            padding-left: 15px;
-        }
-        
-        h4 {
-            color: #27ae60;
-            font-size: 1.15em;
-            font-weight: 700;
-            margin-bottom: 8px;
-            border-left: 5px solid #27ae60;
-            padding-left: 15px;
-        }
-        
-        .job-meta {
-            color: #7f8c8d;
-            font-size: 0.95em;
-            margin-bottom: 15px;
-        }
-        
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin: 15px 0;
-        }
-        
-        .highlight {
-            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
-            padding: 10px 15px;
-            border-radius: 6px;
-            font-size: 0.9em;
-            font-weight: 600;
-            color: #27ae60;
-            transition: all 0.3s ease;
-        }
-        
-        .highlight:hover {
-            background: linear-gradient(135deg, rgba(39, 174, 96, 0.2) 0%, rgba(46, 204, 113, 0.2) 100%);
-            transform: scale(1.05);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 20px 0;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.95em;
-            animation: slideUp 0.6s ease-out;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-            }
-            
-            header {
-                padding: 40px 20px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            h2 {
-                font-size: 1.1em;
-            }
-            
-            section {
-                padding: 20px;
-            }
-            
-            .skill-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
-    </style>
+    <title>Pavan Chindala - Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <header>
-            <h1>Chindala Pavan</h1>
-            <h2>Senior Ruby on Rails Programmer</h2>
-            <p>DDD | Scalable APIs | High-Compliance Platforms</p>
-            <p>📧 dpavan8121@gmail.com | 📱 +1 3146438716</p>
+            <h1>PAVAN CHINDALA</h1>
+            <h2>Full Stack Software Developer</h2>
+            <p>📍 United States | 📱 908-427-5965 | 📧 pavanckr2020@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/pavanckr2020" style="color: #667eea; text-decoration: none; font-weight: 700;">💼 LinkedIn Profile</a></p>
         </header>
 
         <section id="about">
             <h3>💡 About</h3>
-            <p>9+ years architecting scalable web applications in FinTech, HealthCare, and Ecommerce. Expert in Rails, microservices, and full-stack development. Passionate about clean code, system design, and mentoring teams.</p>
+            <p>4+ years building scalable full-stack applications using React, Angular, Java, Python, and cloud technologies. Specialist in microservices, RESTful APIs, and DevOps. Impact in FinTech and InsureTech with proven expertise in both frontend and backend architecture.</p>
         </section>
 
         <section id="technical-skills">
-            <h3>⚡ Core Expertise</h3>
+            <h3>⚡ Technical Stack</h3>
             <div class="skill-grid">
-                <div class="skill-tag">Rails 6.x/7.x</div>
-                <div class="skill-tag">Microservices</div>
-                <div class="skill-tag">Domain-Driven Design</div>
-                <div class="skill-tag">GraphQL & REST APIs</div>
+                <div class="skill-tag">React.js</div>
+                <div class="skill-tag">Angular</div>
+                <div class="skill-tag">Java 17</div>
+                <div class="skill-tag">Spring Boot</div>
+                <div class="skill-tag">Python/Django</div>
+                <div class="skill-tag">Node.js</div>
                 <div class="skill-tag">PostgreSQL</div>
-                <div class="skill-tag">React & Angular</div>
+                <div class="skill-tag">MongoDB</div>
+                <div class="skill-tag">Docker</div>
                 <div class="skill-tag">Kubernetes</div>
-                <div class="skill-tag">Redis & Sidekiq</div>
-                <div class="skill-tag">AWS & Azure</div>
-                <div class="skill-tag">TDD/BDD</div>
+                <div class="skill-tag">REST APIs</div>
+                <div class="skill-tag">Microservices</div>
+                <div class="skill-tag">GraphQL</div>
+                <div class="skill-tag">AWS</div>
+                <div class="skill-tag">CI/CD</div>
             </div>
         </section>
 
@@ -291,89 +45,39 @@
             <h3>🚀 Experience</h3>
 
             <article>
-                <h4>Cotiviti | Senior RoR Programmer</h4>
-                <p class="job-meta">Nov 2024 – Present | South Jordan, Utah</p>
+                <h4>Blue Cross Blue Shield, MA | Software Developer</h4>
+                <p class="job-meta">Aug 2024 – Present</p>
                 <div class="highlights">
-                    <div class="highlight">Rails 6.1/7.0</div>
-                    <div class="highlight">DDD Architecture</div>
-                    <div class="highlight">GraphQL APIs</div>
-                    <div class="highlight">Kubernetes</div>
-                </div>
-                <p>Lead backend modernization with Rails Engines, DDD patterns, and GraphQL. Architect multi-tenant systems with Kafka & Sidekiq Pro. Drive technical mentorship on advanced Rails practices.</p>
-            </article>
-
-            <article>
-                <h4>McKinsey & Company | Senior RoR Backend Developer</h4>
-                <p class="job-meta">Aug 2022 – Oct 2024 | New York, NY</p>
-                <div class="highlights">
-                    <div class="highlight">Microservices</div>
-                    <div class="highlight">GraphQL</div>
-                    <div class="highlight">Azure AKS</div>
+                    <div class="highlight">Java 17</div>
+                    <div class="highlight">Spring Boot</div>
                     <div class="highlight">PostgreSQL</div>
+                    <div class="highlight">Kubernetes</div>
+                    <div class="highlight">Angular</div>
+                    <div class="highlight">RabbitMQ</div>
                 </div>
-                <p>Engineered microservices-based architecture using Rails Engines. Designed unified GraphQL gateway with schema stitching. Led cross-functional teams on system design and optimization.</p>
+                <p>Led AI-driven insurance claims automation platform reducing manual processing by 40%. Developed resilient RESTful APIs with Spring Boot reducing API latency by 30%. Built responsive Angular interfaces achieving 99.9% uptime through Spring Cloud microservices.</p>
             </article>
 
             <article>
-                <h4>Amex | RoR Backend Developer</h4>
-                <p class="job-meta">Jun 2019 – Mar 2022 | Chennai</p>
+                <h4>Accenture, India | Full Stack Developer</h4>
+                <p class="job-meta">Jan 2021 – Jul 2023</p>
                 <div class="highlights">
-                    <div class="highlight">Rails 5.2</div>
-                    <div class="highlight">RESTful APIs</div>
+                    <div class="highlight">React.js</div>
+                    <div class="highlight">Java/Spring Boot</div>
+                    <div class="highlight">Python/Django</div>
                     <div class="highlight">AWS Services</div>
-                    <div class="highlight">ELK Stack</div>
+                    <div class="highlight">Apache Kafka</div>
+                    <div class="highlight">Jenkins/K8s</div>
                 </div>
-                <p>Built high-performance transaction services handling millions of operations. Optimized PostgreSQL queries. Implemented comprehensive monitoring with ELK Stack.</p>
-            </article>
-
-            <article>
-                <h4>Keka Technologies | Junior Backend Developer</h4>
-                <p class="job-meta">Mar 2016 – May 2019 | Bengaluru</p>
-                <div class="highlights">
-                    <div class="highlight">Rails 5.0</div>
-                    <div class="highlight">HR Systems</div>
-                    <div class="highlight">Heroku</div>
-                    <div class="highlight">RSpec</div>
-                </div>
-                <p>Developed modular REST endpoints for HR workflows. Optimized MySQL queries by resolving N+1 issues. Implemented robust testing with RSpec and Capybara.</p>
+                <p>Developed cloud-native financial transaction platform reducing abandonment by 22%. Designed secure RESTful APIs for real-time validation and integration. Implemented asynchronous Kafka-based event processing enabling seamless settlement notifications.</p>
             </article>
         </section>
     </main>
     
     <footer>
-        <p>✨ Crafted with care | © 2026 Chindala Pavan</p>
+        <p>✨ Crafted with care | © 2026 Pavan Chindala</p>
     </footer>
 
-    <script>
-        // Stagger animations for articles
-        const articles = document.querySelectorAll('article');
-        articles.forEach((article, index) => {
-            article.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        const skillTags = document.querySelectorAll('.skill-tag');
-        skillTags.forEach((tag, index) => {
-            tag.style.animationDelay = `${index * 0.05}s`;
-        });
-
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'scaleUp 0.6s ease-out forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section, article').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
