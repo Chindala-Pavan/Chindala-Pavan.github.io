@@ -1,5 +1,81 @@
-// Advanced animation system with scroll reveal, hover effects, and interactive elements
-document.addEventListener('DOMContentLoaded', () => {
+// Load data from JSON and render dynamic content
+let portfolioData = {};
+
+async function loadPortfolioData() {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) {
+            throw new Error('Failed to load portfolio data');
+        }
+        portfolioData = await response.json();
+        renderPortfolio();
+    } catch (error) {
+        console.error('Error loading portfolio data:', error);
+    }
+}
+
+function renderPortfolio() {
+    renderHeader();
+    renderAbout();
+    renderSkills();
+    renderExperience();
+    renderFooter();
+    initializeAnimations();
+}
+
+function renderHeader() {
+    const { personal } = portfolioData;
+    
+    document.getElementById('personal-name').textContent = personal.name;
+    document.getElementById('personal-title').textContent = personal.title;
+    document.getElementById('personal-contact').innerHTML = 
+        `📍 ${personal.location} | 📱 ${personal.phone} | 📧 ${personal.email}`;
+    
+    const linkedinLink = document.getElementById('linkedin-link');
+    linkedinLink.href = personal.linkedin;
+    linkedinLink.textContent = '💼 LinkedIn Profile';
+}
+
+function renderAbout() {
+    const { about } = portfolioData;
+    
+    document.getElementById('about-title').textContent = about.title;
+    document.getElementById('about-description').textContent = about.description;
+}
+
+function renderSkills() {
+    const { skills } = portfolioData;
+    const skillsContainer = document.getElementById('skills-container');
+    
+    skillsContainer.innerHTML = skills.map(skill => 
+        `<div class="skill-tag">${skill}</div>`
+    ).join('');
+}
+
+function renderExperience() {
+    const { experience } = portfolioData;
+    const experienceContainer = document.getElementById('experience-container');
+    
+    experienceContainer.innerHTML = experience.map(job => `
+        <article>
+            <h4>${job.company} | ${job.position}</h4>
+            <p class="job-meta">${job.startDate} – ${job.endDate}</p>
+            <div class="highlights">
+                ${job.technologies.map(tech => 
+                    `<div class="highlight">${tech}</div>`
+                ).join('')}
+            </div>
+            <p>${job.description}</p>
+        </article>
+    `).join('');
+}
+
+function renderFooter() {
+    const { footer } = portfolioData;
+    document.getElementById('footer-container').innerHTML = `<p>${footer}</p>`;
+}
+
+function initializeAnimations() {
     const articles = document.querySelectorAll('article');
     const skillTags = document.querySelectorAll('.skill-tag');
     const highlights = document.querySelectorAll('.highlight');
@@ -144,17 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.animation = 'fadeInUp 0.7s ease-out';
     });
 
-    // Mouse tracking for interactive feel
-    let lastX = 0, lastY = 0;
-    document.addEventListener('mousemove', (e) => {
-        lastX = e.clientX;
-        lastY = e.clientY;
-    });
-
     // Add bounce effect on skill tag hover
     skillTags.forEach(tag => {
-        const originalStyle = tag.getAttribute('style') || '';
-        
         tag.addEventListener('mouseenter', function () {
             this.style.setProperty('transform', 'scale(1.08) translateY(-5px)', 'important');
         });
@@ -163,4 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.style.transform = '';
         });
     });
-});
+}
+
+// Load and render portfolio when DOM is ready
+document.addEventListener('DOMContentLoaded', loadPortfolioData);
