@@ -114,7 +114,7 @@ function renderEducation() {
         </article>
     `).join('');
 }
-}
+
 
 function renderFooter() {
     const { footer } = portfolioData;
