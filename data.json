@@ -2,63 +2,110 @@
   "personal": {
     "name": "PAVAN CHINDALA",
     "title": "Full Stack Software Developer",
-    "location": "United States",
+    "location": "NJ, United States",
     "phone": "908-427-5965",
     "email": "pavanckr2020@gmail.com",
     "linkedin": "https://www.linkedin.com/in/pavanckr2020",
     "linkedinHandle": "pavanckr2020"
   },
-  "about": {
-    "title": "💡 About",
-    "description": "4+ years building scalable full-stack applications using React, Angular, Java, Python, and cloud technologies. Specialist in microservices, RESTful APIs, and DevOps. Impact in FinTech and InsureTech with proven expertise in both frontend and backend architecture."
+  "summary": {
+    "title": "💡 Summary",
+    "points": [
+      "Proficient Full Stack Developer with 4+ years of expertise in JavaScript, TypeScript, HTML5, CSS3, and modern front-end frameworks including React.js and Angular, building responsive and user-friendly web applications.",
+      "Experienced in developing scalable back-end systems using Node.js, Express.js, Python (Flask/Django), Ruby on Rails, Java (Spring Boot), and .NET Core, ensuring high performance and robust API integrations.",
+      "Hands-on experience in building AI-driven applications using LLMs, OpenAI APIs, and Retrieval-Augmented Generation (RAG) for intelligent automation, document processing, and conversational solutions.",
+      "Skilled in RESTful API and GraphQL design and development, enabling seamless communication between front-end and back-end services.",
+      "Adept in using SQL (MySQL, PostgreSQL, MS SQL) and NoSQL (MongoDB, Redis, DynamoDB) databases with hands-on experience in schema design, data modeling, and optimization.",
+      "Competent with cloud platforms such as AWS (EC2, S3, Lambda, RDS), Azure, and Google Cloud, and deploying applications using Docker, Kubernetes, Jenkins, and GitHub Actions for CI/CD pipelines.",
+      "Strong understanding of Agile methodologies, TDD/BDD practices, Git, MVC architecture, and security standards (OAuth, JWT, HTTPS), ensuring efficient and secure full stack development lifecycle."
+    ]
   },
-  "skills": [
-    "React.js",
-    "Angular",
-    "Java 17",
-    "Spring Boot",
-    "Python/Django",
-    "Node.js",
-    "PostgreSQL",
-    "MongoDB",
-    "Docker",
-    "Kubernetes",
-    "REST APIs",
-    "Microservices",
-    "GraphQL",
-    "AWS",
-    "CI/CD"
-  ],
+  "skills": {
+    "title": "⚡ Technical Skills",
+    "categories": [
+      {
+        "category": "Front-End Technologies",
+        "items": ["HTML", "CSS", "Bootstrap", "Material-UI", "SASS", "JavaScript", "TypeScript", "ES6", "React.js", "Redux", "React Hooks", "React Native", "AngularJS", "Angular"]
+      },
+      {
+        "category": "Back-End Technologies",
+        "items": ["Java", "Python", "RESTful API", "Webservice", "Microservices", "Spring Boot", "SpringMVC", "Spring Data JPA", "Hibernate ORM", "Node.js", "Express.js", "Ruby on Rails", "Django"]
+      },
+      {
+        "category": "J2EE Technologies",
+        "items": ["Servlets", "JSP", "JDBC", "JUNIT", "JMS", "Maven", "Multi-threading"]
+      },
+      {
+        "category": "AI & Emerging",
+        "items": ["LLMs", "OpenAI API", "Retrieval-Augmented Generation (RAG)", "LangChain", "Prompt Engineering", "NLP", "Vector Databases (Pinecone/FAISS)"]
+      },
+      {
+        "category": "Databases",
+        "items": ["SQL", "MySQL", "PostgreSQL", "MS SQL", "MongoDB", "Redis", "DynamoDB"]
+      },
+      {
+        "category": "Cloud & Deployment",
+        "items": ["AWS (EC2, S3, Lambda, RDS, CloudFront)", "Azure", "Google Cloud", "Docker", "Kubernetes", "Jenkins"]
+      },
+      {
+        "category": "Tools & Methodologies",
+        "items": ["Git", "GitHub", "GitHub Actions", "Jira", "Agile", "TDD/BDD", "CI/CD", "GraphQL", "OpenAPI", "Swagger"]
+      }
+    ]
+  },
   "experience": [
     {
       "company": "Blue Cross Blue Shield, MA",
       "position": "Software Developer",
       "startDate": "Aug 2024",
       "endDate": "Present",
-      "technologies": [
-        "Java 17",
-        "Spring Boot",
-        "PostgreSQL",
-        "Kubernetes",
-        "Angular",
-        "RabbitMQ"
-      ],
-      "description": "Led AI-driven insurance claims automation platform reducing manual processing by 40%. Developed resilient RESTful APIs with Spring Boot reducing API latency by 30%. Built responsive Angular interfaces achieving 99.9% uptime through Spring Cloud microservices."
+      "techStack": "Java 17, Spring Boot, Spring Cloud, Node.js, TypeScript, Angular, PostgreSQL, RabbitMQ, Hibernate, Spring Data JPA, RESTful APIs, OpenAI API, LLMs, RAG, Swagger, Jenkins, GitHub Actions, JUnit, RestAssured, Gherkin, Docker, Kubernetes",
+      "achievements": [
+        "Led real-time development of an AI-driven insurance claims automation platform using predictive analytics and enterprise integration, reducing manual processing by 40% while improving fraud detection & adjudication efficiency.",
+        "Implemented scalable backend services using Java 17, applying OOP and design patterns to optimize multithreaded processing and support concurrent, high-volume policy adjudication within microservices architecture.",
+        "Integrated LLM-based solutions using OpenAI APIs to enhance claims analysis and automate document processing workflows.",
+        "Designed RAG-based architecture for retrieving policy and claims data, improving decision accuracy and reducing manual lookup time.",
+        "Developed resilient RESTful APIs using Spring Boot, improving backend orchestration, reducing API latency by 30%, and enabling seamless real-time integration across claims intake, validation, & policyholder communication systems.",
+        "Architected fault-tolerant microservices infrastructure using Spring Cloud, achieving 99.9% system availability through service discovery, circuit breakers, and load balancing to support peak insurance claim processing workloads.",
+        "Built responsive, role-based front-end interfaces using Angular, improving UI performance and accessibility compliance (WCAG), and increasing claims adjuster productivity by 25% through real-time claim tracking dashboards.",
+        "Designed optimized relational data models using PostgreSQL, applying indexing and query tuning to improve complex query performance by 18% while ensuring regulatory-compliant storage of claims and member data.",
+        "Engineered asynchronous, event-driven communication using RabbitMQ, decoupling microservices to enable real-time claim updates and reducing inter-service latency by 25% across payment authorization and audit workflows.",
+        "Optimized the persistence layer using Hibernate, refining ORM strategies to improve transactional throughput and ensure efficient access to claim lifecycle and reimbursement records under peak workloads.",
+        "Automated deployments using Docker, standardizing environments, reducing configuration drift, and accelerating containerized service provisioning across integration, staging, and UAT pipelines.",
+        "Deployed and orchestrated containerized microservices using Kubernetes, enabling rolling updates, auto-scaling, and high availability across production-grade insurance claims processing environments."
+      ]
     },
     {
       "company": "Accenture, India",
       "position": "Full Stack Developer",
       "startDate": "Jan 2021",
       "endDate": "Jul 2023",
-      "technologies": [
-        "React.js",
-        "Java/Spring Boot",
-        "Python/Django",
-        "AWS Services",
-        "Apache Kafka",
-        "Jenkins/K8s"
-      ],
-      "description": "Developed cloud-native financial transaction platform reducing abandonment by 22%. Designed secure RESTful APIs for real-time validation and integration. Implemented asynchronous Kafka-based event processing enabling seamless settlement notifications."
+      "techStack": "Java, Python, Spring Boot, Node.js, TypeScript, React.js, JavaScript, HTML5, CSS3, Redux, Bootstrap, RESTful APIs, Django, Ruby on Rails, Docker, Kubernetes, Jenkins, Git, AWS (Lambda, S3, RDS, CloudFront), Apache Kafka, JUnit, Mockito, Jest, NPM",
+      "achievements": [
+        "Led development of a cloud-native financial transaction platform using Java, Python, Django, Spring Boot, and microservices, enhancing processing accuracy, compliance, and throughput across high-volume finance workflows.",
+        "Designed secure RESTful APIs with Spring Boot & Django REST Framework, enabling real-time validation, seamless data exchange, and integration between transaction ingestion, risk assessment, and financial reporting systems.",
+        "Developed interactive interfaces using React.js, JavaScript, HTML5, and CSS3, improving client engagement, reducing transaction abandonment by 22%, and supporting real-time financial data capture on enterprise dashboards.",
+        "Implemented front-end state management with Redux, ensuring consistent data flow, reducing UI defects, and improving performance for multi-step transaction initiation and status tracking workflows.",
+        "Built backend business logic using Python and Django for transaction validation, reconciliation, and audit logging, supporting scalable financial operations and regulatory-compliant processing across distributed services.",
+        "Enabled asynchronous, event-driven processing with Apache Kafka, decoupling microservices, supporting real-time transaction updates, improving resilience, & reducing processing latency across settlement and notification pipelines.",
+        "Developed microservices using Node.js and TypeScript to support lightweight API endpoints and improve system flexibility in a cloud-native architecture.",
+        "Built and maintained REST APIs using Express.js, enabling seamless integration between frontend React applications and backend financial services.",
+        "Developed internal tools using Ruby on Rails to support financial data processing and reporting workflows, improving operational efficiency for backend teams.",
+        "Automated CI/CD pipelines using Jenkins, Docker, & Kubernetes, standardizing environments, accelerating deployments, and ensuring high availability for containerized financial microservices across integration, staging, and production.",
+        "Implemented unit and integration testing using JUnit, Mockito, and Jest, improving test coverage, validating financial business rules, and ensuring reliability across transaction processing, reconciliation, and reporting components.",
+        "Leveraged AWS services including Lambda, S3, RDS, & CloudFront to deploy scalable cloud infrastructure, supporting secure data storage, serverless processing, & optimized content delivery for enterprise financial applications.",
+        "Streamlined frontend build and deployment workflows using NPM, enforcing linting standards, automating builds, and reducing manual release errors across web-based financial transaction management interfaces."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science in Cybersecurity",
+      "school": "Saint Louis University, Missouri, USA"
+    },
+    {
+      "degree": "Bachelor of Technology in Computer Science",
+      "school": "Malla Reddy College of Engineering and Technology, Hyderabad"
     }
   ],
   "footer": "✨ Crafted with care | © 2026 Pavan Chindala"

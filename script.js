@@ -16,9 +16,10 @@ async function loadPortfolioData() {
 
 function renderPortfolio() {
     renderHeader();
-    renderAbout();
+    renderSummary();
     renderSkills();
     renderExperience();
+    renderEducation();
     renderFooter();
     initializeAnimations();
 }
@@ -36,20 +37,47 @@ function renderHeader() {
     linkedinLink.textContent = '💼 LinkedIn Profile';
 }
 
-function renderAbout() {
-    const { about } = portfolioData;
+function renderSummary() {
+    const { summary } = portfolioData;
     
-    document.getElementById('about-title').textContent = about.title;
-    document.getElementById('about-description').textContent = about.description;
+    if (!summary) return;
+    
+    document.getElementById('summary-title').textContent = summary.title;
+    const summaryContainer = document.getElementById('summary-container');
+    
+    summaryContainer.innerHTML = summary.points.map(point => 
+        `<p style="margin-bottom: 16px; line-height: 1.8;">• ${point}</p>`
+    ).join('');
 }
 
 function renderSkills() {
     const { skills } = portfolioData;
+    
+    if (!skills) return;
+    
+    document.getElementById('skills-title').textContent = skills.title;
     const skillsContainer = document.getElementById('skills-container');
     
-    skillsContainer.innerHTML = skills.map(skill => 
-        `<div class="skill-tag">${skill}</div>`
-    ).join('');
+    if (Array.isArray(skills.categories)) {
+        // Render skills with categories
+        skillsContainer.innerHTML = skills.categories.map(category => `
+            <div style="margin-bottom: 24px;">
+                <h4 style="color: #667eea; font-size: 1.1em; font-weight: 700; margin-bottom: 12px; border-bottom: 2px solid #667eea; padding-bottom: 8px;">
+                    ${category.category}
+                </h4>
+                <div class="skill-grid" style="margin-top: 10px;">
+                    ${category.items.map(item => 
+                        `<div class="skill-tag">${item}</div>`
+                    ).join('')}
+                </div>
+            </div>
+        `).join('');
+    } else if (Array.isArray(skills)) {
+        // Fallback for flat skill array
+        skillsContainer.innerHTML = skills.map(skill => 
+            `<div class="skill-tag">${skill}</div>`
+        ).join('');
+    }
 }
 
 function renderExperience() {
@@ -60,14 +88,32 @@ function renderExperience() {
         <article>
             <h4>${job.company} | ${job.position}</h4>
             <p class="job-meta">${job.startDate} – ${job.endDate}</p>
-            <div class="highlights">
-                ${job.technologies.map(tech => 
-                    `<div class="highlight">${tech}</div>`
+            <p style="font-size: 0.95em; color: #6b7280; margin-bottom: 16px; font-style: italic;">
+                Tech Stack: ${job.techStack}
+            </p>
+            <div style="margin-top: 16px;">
+                ${job.achievements.map(achievement => 
+                    `<p style="margin-bottom: 12px; line-height: 1.8;">• ${achievement}</p>`
                 ).join('')}
             </div>
-            <p>${job.description}</p>
         </article>
     `).join('');
+}
+
+function renderEducation() {
+    const { education } = portfolioData;
+    
+    if (!education) return;
+    
+    const educationContainer = document.getElementById('education-container');
+    
+    educationContainer.innerHTML = education.map(edu => `
+        <article style="border-bottom: 2px solid #e5e7eb; padding-bottom: 20px; margin-bottom: 20px;">
+            <h4 style="color: #4f46e5; margin-bottom: 8px;">${edu.degree}</h4>
+            <p style="color: #6b7280; font-size: 1em;">${edu.school}</p>
+        </article>
+    `).join('');
+}
 }
 
 function renderFooter() {
